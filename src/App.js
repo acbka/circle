@@ -1,6 +1,10 @@
 
 import './App.css';
-import { UserStatus } from './components/UserStatus'
+import { UserStatus } from './components/UserStatus';
+import { Button } from './components/Button';
+import circle from './img/circle.svg';
+import magnifier from './img/Magnifier.svg';
+import visitArrow from './img/Visit Arrow.svg'
 
 function App() {
 
@@ -26,9 +30,20 @@ function App() {
       }
    }
 
+   const search = () => {
+      alert("search")
+   }
+
+   const visit = () => {
+      alert("visit")
+   }
+
   return (
-   <div>
+   <div className="main-circle">
+      <img src={circle} alt="circle"></img>
       <UserStatus member={member}></UserStatus>
+      <Button clickButton={search} icon={magnifier} name="magnifier"></Button>
+      <Button clickButton={visit} icon={visitArrow} name="visit"></Button>
    </div>
   );
 }

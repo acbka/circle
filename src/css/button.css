@@ -1,0 +1,16 @@
+.magnifier{
+   background-color: transparent;
+   padding: 5px;
+   border: none;
+   position: fixed;
+   top: calc(50% + 20px);
+   left: calc(50% - 45px); 
+}
+.visit{
+   background-color: transparent;
+   padding: 5px;
+   border: none;
+   position: fixed;
+   top: calc(50% + 18px);
+   left: calc(50% + 23px); 
+}
