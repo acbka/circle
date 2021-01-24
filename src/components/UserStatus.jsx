@@ -3,25 +3,32 @@ import '../css/userStatus.css';
 import { color } from '../common/color';
 import { drawArc } from '../common/draw';
 import { drawCross } from '../common/draw';
-import { drawTitle } from '../common/draw'
+import { drawTitle } from '../common/draw';
+import { clear } from '../common/draw'
 
 
 export const UserStatus = ({member}) => {
 
    const canvasRef = useRef(null);
-
    const radius = 88;
    const center = 100;
 
-   useEffect(() => {
    
+
+   useEffect(() => {
+      
       const canvas = canvasRef.current
-      const context = canvas.getContext('2d')
+      const context = canvas.getContext('2d');
+      canvas.width = 200;
+      canvas.height = 200;
+      
+      clear(context);
 
       member.forEach(el => {
          let startArc = (el.start+1)*Math.PI/180;
          let endtArc = (el.end-1)*Math.PI/180;
 
+         
          drawArc(context, startArc, endtArc, color[el.status], center, radius)
 
          if (el.status === "broken") {
@@ -36,5 +43,5 @@ export const UserStatus = ({member}) => {
 
    }, [member])
    
-   return <canvas className="canvas" ref={canvasRef} width="200" height="200"/>
+   return <canvas className="canvas" ref={canvasRef}/>
 }

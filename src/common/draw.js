@@ -1,4 +1,9 @@
+export const clear = (ctx) => {
+   ctx.clearRect(0, 0, 200, 200); 
+}
+
 export const drawArc = (ctx, start, end, color, center, radius) => {
+   
    ctx.beginPath();
    ctx.lineWidth = 10;
    ctx.arc(center, center, radius, start, end);
@@ -34,7 +39,7 @@ export const drawTitle = (ctx, number, center) => {
    let angle = Math.PI * .8 ; 
    let radius = 42; 
    ctx.font = "20px monospace";
-   ctx.translate(100, 100); 
+   ctx.translate(center, center); 
    ctx.rotate(-1 * angle / 1.8); 
    ctx.fillStyle = "white"; 
    ctx.textAlign = "center";

@@ -9,7 +9,7 @@ export const Button = ({clickButton, icon, name}) => {
    };
 
    return (
-      <div className="main_button">
+      <div>
          <button className={name} onClick={handleClick}><img src={icon} alt={name} /></button>
       </div>
    )
